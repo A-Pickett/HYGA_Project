@@ -1,0 +1,25 @@
+{% extends 'inventory/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Inventory</h1>
+    <div class="row">
+    {% for option in options %}
+        <div class="col-md-4">
+            <div class="card mb-2">
+                <a href="{% url 'inventory:my_inventory' %}" class="btn btn-primary">{{option.title}}</a>
+                <img class="card-img-top" src="{% static option.image %}" alt="{{ option.description }}">
+                <div class="card-body">
+                    <p class="card-text">{{ option.description }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
