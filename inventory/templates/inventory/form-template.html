@@ -1,0 +1,15 @@
+#  Here we are creating a template for how we will display the required fields for any forms we will use.
+#  to show how each input box will be displayed.
+
+{% for field in form %}
+    <div class="form-group">
+        #  Adding how the error messages will be displayed if the user does something wrong. e.g required field is left blank
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text=-danger small">{{ field.errors }}</span>
+        </div>
+        #  Adding the label tag (the name of the field required (like title, desc, loc etc)
+        <label class="control-label col-sm-2">{{ field.label_tag }}</label>
+        #  Adding the actual field to be inputted (this could be a drop down, button to find file, text etc.
+        <div class="col-sm-10">{{ field }}</div>
+    </div>
+{% endfor %}

@@ -11,7 +11,7 @@
         <div class="col-md-4">
             <div class="card mb-2">
                 <a href="{% url 'inventory:item_detail' item.pk %}" class="btn btn-primary">{{item.item}}</a>
-                <img class="card-img-top" src="{% static item.image %}" alt="{{ item.description }}">
+                <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.description }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ item.title }}</h5>
                     <p class="card-text">Description: {{ item.desc }}</p>

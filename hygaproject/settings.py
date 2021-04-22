@@ -125,3 +125,8 @@ LOGOUT_REDIRECT_URL = 'home'  # new
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+
+# Setting a place for user uploaded images to be stored and loaded from.
+# this is for debug mode only. when live we would need a server to store these.
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
